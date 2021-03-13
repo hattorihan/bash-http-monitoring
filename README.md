@@ -131,6 +131,12 @@ The JSON sent is in the following format:
 		"error": "descriptive error text (from curl mostly)"
 	} 
 
+It also supports slack webhooks. See [here on the Slack site](https://api.slack.com/messaging/webhooks) how to set up a webhook. The callback URL looks like this: 
+
+    https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+
+When the callback URL contains `hooks.slack.com`, the JSON sent is formatted to match slack's webhook specification.
+
 Each failed check results in its own request. No bundling is done.
 
 You can use HTTPbin to test locally. HTTPbin is a so called `echo` server, anything 
